@@ -1,9 +1,9 @@
 #
 %define		postgresql_version	8.0.3
-%define		postgresql_release	2
-%define         _pgmoduledir    %{_libdir}/postgresql
+%define		postgresql_release	3
+%define		_pgmoduledir		%{_libdir}/postgresql
 
-Summary:	PL/Java- PostgreSQL procedural language
+Summary:	PL/Java - PostgreSQL procedural language
 Summary(pl):	PL/Java - jêzyk proceduralny bazy danych PostgreSQL
 Name:		postgresql-module-pljava
 Version:	1.1.0
@@ -47,19 +47,18 @@ proceduralnego PL/Java dla swojej bazy danych.
 %setup -q -n pljava-%{version}
 
 %build
-%{__make}
+%{__make} \
+	JAVA_HOME=/usr/lib/java
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pgmoduledir}
-install -d $RPM_BUILD_ROOT/docs
 
 install build/objs/*.so $RPM_BUILD_ROOT%{_pgmoduledir}
-install docs/* $RPM_BUILD_ROOT/docs
 
 %files
 %defattr(644,root,root,755)
-%doc $RPM_BUILD_ROOT/docs/*
+%doc docs/*
 %attr(755,root,root) %{_pgmoduledir}/*.so
 
 %changelog
@@ -67,7 +66,10 @@ install docs/* $RPM_BUILD_ROOT/docs
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: postgresql-module-pljava.spec,v $
-Revision 1.1  2005-05-30 14:56:22  martii
+Revision 1.2  2005-08-14 11:32:35  zbyniu
+- JAVA_HOME; cleanups
+
+Revision 1.1  2005/05/30 14:56:22  martii
 - new spec
 - initial version not test
 - not finished
