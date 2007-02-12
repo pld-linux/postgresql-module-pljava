@@ -4,7 +4,7 @@
 %define		_pgmoduledir		%{_libdir}/postgresql
 
 Summary:	PL/Java - PostgreSQL procedural language
-Summary(pl):	PL/Java - jêzyk proceduralny bazy danych PostgreSQL
+Summary(pl.UTF-8):   PL/Java - jÄ™zyk proceduralny bazy danych PostgreSQL
 Name:		postgresql-module-pljava
 Version:	1.1.0
 Release:	1
@@ -29,18 +29,18 @@ on demand.
 To enable PL/Java procedural language for your database you have to
 run createlang command.
 
-%description -l pl
+%description -l pl.UTF-8
 Z dokumentacji PostgreSQL:
 
-Postgres ma wsparcie dla jêzyków proceduralnych. W przypadku, kiedy
-programista zdefiniuje procedurê wyzwalacza lub funkcjê w jêzyku
-proceduralnym, baza danych nie ma pojêcia jak interpretowaæ tego typu
-funkcjê. Funkcja lub procedura ta jest przekazywana do interpretera,
-który wie jak j± wykonaæ. Interpreter jest odpowiedni±, specjaln±
-funkcj±, która jest skompilowana w obiekt dzielony i ³adowany w razie
+Postgres ma wsparcie dla jÄ™zykÃ³w proceduralnych. W przypadku, kiedy
+programista zdefiniuje procedurÄ™ wyzwalacza lub funkcjÄ™ w jÄ™zyku
+proceduralnym, baza danych nie ma pojÄ™cia jak interpretowaÄ‡ tego typu
+funkcjÄ™. Funkcja lub procedura ta jest przekazywana do interpretera,
+ktÃ³ry wie jak jÄ… wykonaÄ‡. Interpreter jest odpowiedniÄ…, specjalnÄ…
+funkcjÄ…, ktÃ³ra jest skompilowana w obiekt dzielony i Å‚adowany w razie
 potrzeby.
 
-Za pomoc± polecenia createlang mo¿na dodaæ obs³ugê jêzyka
+Za pomocÄ… polecenia createlang moÅ¼na dodaÄ‡ obsÅ‚ugÄ™ jÄ™zyka
 proceduralnego PL/Java dla swojej bazy danych.
 
 %prep
@@ -66,7 +66,10 @@ install build/objs/*.so $RPM_BUILD_ROOT%{_pgmoduledir}
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: postgresql-module-pljava.spec,v $
-Revision 1.2  2005-08-14 11:32:35  zbyniu
+Revision 1.3  2007-02-12 01:06:27  baggins
+- converted to UTF-8
+
+Revision 1.2  2005/08/14 11:32:35  zbyniu
 - JAVA_HOME; cleanups
 
 Revision 1.1  2005/05/30 14:56:22  martii
