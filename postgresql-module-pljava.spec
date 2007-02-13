@@ -4,7 +4,7 @@
 %define		_pgmoduledir		%{_libdir}/postgresql
 
 Summary:	PL/Java - PostgreSQL procedural language
-Summary(pl.UTF-8):   PL/Java - język proceduralny bazy danych PostgreSQL
+Summary(pl.UTF-8):	PL/Java - język proceduralny bazy danych PostgreSQL
 Name:		postgresql-module-pljava
 Version:	1.1.0
 Release:	1
@@ -66,7 +66,10 @@ install build/objs/*.so $RPM_BUILD_ROOT%{_pgmoduledir}
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: postgresql-module-pljava.spec,v $
-Revision 1.3  2007-02-12 01:06:27  baggins
+Revision 1.4  2007-02-13 08:06:41  glen
+- tabs in preamble
+
+Revision 1.3  2007/02/12 01:06:27  baggins
 - converted to UTF-8
 
 Revision 1.2  2005/08/14 11:32:35  zbyniu
