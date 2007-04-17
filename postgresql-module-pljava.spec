@@ -10,7 +10,9 @@ License:	BSD
 Group:		Applications/Databases
 Source0:	http://gborg.postgresql.org/download/pljava/stable/pljava-src-%{version}.tar.gz
 # Source0-md5:	fca1db791d6888b6655efa04ce0b63ee
-BuildRequires:	postgresql-backend-devel
+URL:		http://gborg.postgresql.org/project/pljava/projdisplay.php
+BuildRequires:	postgresql-backend-devel >= 8.0
+Requires:	postgresql >= 8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
