@@ -1,18 +1,16 @@
 #
-%define		postgresql_version	8.0.3
-%define		postgresql_release	3
 %define		_pgmoduledir		%{_libdir}/postgresql
 
 Summary:	PL/Java - PostgreSQL procedural language
 Summary(pl.UTF-8):	PL/Java - język proceduralny bazy danych PostgreSQL
 Name:		postgresql-module-pljava
-Version:	1.1.0
-Release:	1
+Version:	1.2.0
+Release:	0.1
 License:	BSD
 Group:		Applications/Databases
 Source0:	http://gborg.postgresql.org/download/pljava/stable/pljava-src-%{version}.tar.gz
+# Source0-md5:	fca1db791d6888b6655efa04ce0b63ee
 BuildRequires:	postgresql-backend-devel
-Requires:	postgresql = %{postgresql_version}-%{postgresql_release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -60,22 +58,3 @@ install build/objs/*.so $RPM_BUILD_ROOT%{_pgmoduledir}
 %defattr(644,root,root,755)
 %doc docs/*
 %attr(755,root,root) %{_pgmoduledir}/*.so
-
-%changelog
-* %{date} PLD Team <feedback@pld-linux.org>
-All persons listed below can be reached at <cvs_login>@pld-linux.org
-
-$Log: postgresql-module-pljava.spec,v $
-Revision 1.4  2007-02-13 08:06:41  glen
-- tabs in preamble
-
-Revision 1.3  2007/02/12 01:06:27  baggins
-- converted to UTF-8
-
-Revision 1.2  2005/08/14 11:32:35  zbyniu
-- JAVA_HOME; cleanups
-
-Revision 1.1  2005/05/30 14:56:22  martii
-- new spec
-- initial version not test
-- not finished
