@@ -56,6 +56,9 @@ install -d $RPM_BUILD_ROOT%{_pgmoduledir}
 
 install build/objs/*.so $RPM_BUILD_ROOT%{_pgmoduledir}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(644,root,root,755)
 %doc docs/*
